@@ -61,7 +61,24 @@
 //    又看源码，看你妹妹呀！
 
 #import "CommonUtility.h"
+#import "MapDemoHeader.h"
 
 @implementation CommonUtility
+
+#pragma mark ---- 改变状态栏透明度
++ (CGFloat)changeAlpha:(CGFloat)offset {
+    if (offset > -(SCREEN_HEIGHT / 2.f - STATUS_HEIGHT)) {
+        CGFloat total = ABS(-(SCREEN_HEIGHT / 2.f - STATUS_HEIGHT));
+        //改变透明度
+        CGFloat alpha = 1 - ABS(offset) / total;
+        if (alpha > .95f) {
+            alpha = 1.f;
+        }else if (alpha < .05f) {
+            alpha = 0;
+        }
+        return alpha;
+    }
+    return 0.f;
+}
 
 @end
