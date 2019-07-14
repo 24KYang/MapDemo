@@ -1,0 +1,10 @@
+target 'MapDemo' do
+
+platform :ios, "9.0"
+  # use_frameworks!
+
+pod 'AMapLocation'
+pod 'AMap2DMap'
+pod 'AMapSearch'
+
+end
